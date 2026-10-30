@@ -34,6 +34,31 @@ const oldRender=renderSession;
 renderSession=function(){oldRender();
   const next=document.querySelector('.next-fab span');if(next&&active){const ni=currentIndex()+1,e=active.exercises[ni],g=e&&GUIDE[e.name];if(g)next.textContent=g.title;}
 };
-const css=document.createElement('style');css.textContent=`.exercise-guide-cue{margin-top:6px;max-width:520px;font-size:10px;line-height:1.45;color:#9fb0c8}.exercise-card.is-collapsed .exercise-guide-cue{display:none}@media(max-width:480px){.exercise-guide-cue{font-size:9.5px}}`;document.head.appendChild(css);
+const css=document.createElement('style');css.textContent=`
+.exercise-top{align-items:flex-start}
+.exercise-top>div:first-child{flex:1;min-width:0;width:100%;grid-template-columns:38px minmax(0,1fr);column-gap:11px;align-items:start}
+.exercise-count{grid-row:1/4;align-self:start;margin-top:2px}
+.exercise-top h3{grid-column:2;font-size:18px;line-height:1.18;overflow-wrap:normal;word-break:normal}
+.exercise-top p{grid-column:2;font-size:12.5px;line-height:1.4;color:#a9bad0;margin:4px 0 0}
+.exercise-guide-cue{grid-column:2;margin-top:8px;max-width:none;font-size:12px;line-height:1.5;color:#aebdd0}
+.exercise-status{flex:0 0 auto;align-self:flex-start;margin-top:2px}
+.previous{font-size:11px;line-height:1.4}
+.smart-rec p{font-size:11.5px!important;line-height:1.5!important}
+.section-banner span{font-size:12px}
+.exercise-card.is-collapsed .exercise-guide-cue{display:none}
+.next-fab{max-width:205px}
+.next-fab span{font-size:12.5px;line-height:1.2}
+@media(max-width:480px){
+ .exercise-toggle{padding:15px 14px}
+ .exercise-top{gap:8px}
+ .exercise-top>div:first-child{grid-template-columns:36px minmax(0,1fr);column-gap:10px}
+ .exercise-top h3{font-size:17.5px}
+ .exercise-top p{font-size:12px}
+ .exercise-guide-cue{font-size:11.5px;line-height:1.5}
+ .exercise-status{gap:6px;font-size:10px}
+ .previous{font-size:10.5px}
+ .smart-rec p{font-size:11px!important}
+}
+`;document.head.appendChild(css);
 if(active&&view==='home')renderSession();
 })();
