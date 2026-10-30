@@ -2,8 +2,8 @@
 const GUIDE={
 'Chest Press':{title:'Flat Machine Chest Press',cue:'Seated chest-press machine · back supported · handles around mid-chest. Use the same machine on Day 1 and Day 3 so Smart Progression compares like with like.'},
 'Cable Row':{title:'Seated Cable Row',cue:'Cable stack · neutral/medium grip · torso upright · pull toward the lower ribs without rocking.'},
-'Leg Press':{title:'Leg Press — Same Machine Each Week',cue:'Prefer the 45° sled leg press if available. Keep the same machine and similar foot position each session so load progression stays meaningful.'},
-'Lat Pulldown':{title:'Lat Pulldown — Neutral/Medium Grip',cue:'Cable lat-pulldown station · use a comfortable neutral or medium-width grip · pull toward the upper chest without leaning far back.'},
+'Leg Press':{title:'45° Leg Press',cue:'Prefer the 45° sled leg press if available. Keep the same machine and similar foot position each session so load progression stays meaningful.'},
+'Lat Pulldown':{title:'Lat Pulldown',cue:'Cable lat-pulldown station · use a comfortable neutral or medium-width grip · pull toward the upper chest without leaning far back.'},
 'Incline Press':{title:'Incline Machine Chest Press',cue:'Machine press with roughly a 30–45° incline · back supported · upper-chest emphasis. Keep the same machine/seat setting when possible.'},
 'Leg Curl':{title:'Seated Leg Curl',cue:'Use the seated leg-curl machine where available · line the knee up with the machine pivot · control the return.'},
 'Lateral Raise':{title:'Machine Lateral Raise',cue:'Use the lateral-raise machine for stable, repeatable progression · raise to about shoulder height with control.'},
@@ -38,26 +38,27 @@ const css=document.createElement('style');css.textContent=`
 .exercise-top{align-items:flex-start}
 .exercise-top>div:first-child{flex:1;min-width:0;width:100%;grid-template-columns:38px minmax(0,1fr);column-gap:11px;align-items:start}
 .exercise-count{grid-row:1/4;align-self:start;margin-top:2px}
-.exercise-top h3{grid-column:2;font-size:18px;line-height:1.18;overflow-wrap:normal;word-break:normal}
-.exercise-top p{grid-column:2;font-size:12.5px;line-height:1.4;color:#a9bad0;margin:4px 0 0}
-.exercise-guide-cue{grid-column:2;margin-top:8px;max-width:none;font-size:12px;line-height:1.5;color:#aebdd0}
+.exercise-top h3{grid-column:2;font-size:19px;line-height:1.18;overflow-wrap:normal;word-break:normal}
+.exercise-top p{grid-column:2;font-size:13px;line-height:1.45;color:#a9bad0;margin:4px 0 0}
+.exercise-guide-cue{grid-column:2;margin-top:9px;max-width:none;font-size:13px;line-height:1.55;color:#b6c3d5}
 .exercise-status{flex:0 0 auto;align-self:flex-start;margin-top:2px}
-.previous{font-size:11px;line-height:1.4}
-.smart-rec p{font-size:11.5px!important;line-height:1.5!important}
-.section-banner span{font-size:12px}
+.previous{font-size:11.5px;line-height:1.45}
+.smart-rec p{font-size:12px!important;line-height:1.55!important}
+.section-banner span{font-size:12.5px}
 .exercise-card.is-collapsed .exercise-guide-cue{display:none}
-.next-fab{max-width:205px}
-.next-fab span{font-size:12.5px;line-height:1.2}
+.next-fab{right:12px;bottom:92px;max-width:172px;padding:8px 10px;border-radius:15px;opacity:.96}
+.next-fab small{font-size:7.5px}.next-fab span{font-size:11.5px;line-height:1.15}.next-fab b{font-size:12px}
 @media(max-width:480px){
  .exercise-toggle{padding:15px 14px}
  .exercise-top{gap:8px}
  .exercise-top>div:first-child{grid-template-columns:36px minmax(0,1fr);column-gap:10px}
- .exercise-top h3{font-size:17.5px}
- .exercise-top p{font-size:12px}
- .exercise-guide-cue{font-size:11.5px;line-height:1.5}
+ .exercise-top h3{font-size:18.5px}
+ .exercise-top p{font-size:12.5px}
+ .exercise-guide-cue{font-size:12.5px;line-height:1.55}
  .exercise-status{gap:6px;font-size:10px}
- .previous{font-size:10.5px}
- .smart-rec p{font-size:11px!important}
+ .previous{font-size:11px}
+ .smart-rec p{font-size:11.5px!important}
+ .next-fab{max-width:160px}
 }
 `;document.head.appendChild(css);
 if(active&&view==='home')renderSession();
